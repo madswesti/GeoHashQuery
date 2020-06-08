@@ -200,6 +200,7 @@ final class GeoHashQueryTests: XCTestCase {
 
 extension Set where Element == GeoHashQuery {
 	func contains(location: CLLocation) -> Bool {
-		self.first { $0.contains(GeoHash(location: location.coordinate)) } != nil
+		guard let geoHash = GeoHash(location: location.coordinate) else { return false }
+		return self.first { $0.contains(geoHash) } != nil
 	}
 }

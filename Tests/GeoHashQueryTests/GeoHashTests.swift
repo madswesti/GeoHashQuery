@@ -3,6 +3,12 @@ import XCTest
 
 final class GeoHashTests: XCTestCase {
 	
+	func testInvalidArguments() {
+		XCTAssertNil(GeoHash(location: CLLocationCoordinate2D(latitude: 0, longitude: 0), precision:0))
+		XCTAssertNil(GeoHash(location: CLLocationCoordinate2D(latitude: 0, longitude: 0), precision:23))
+		XCTAssertNotNil(GeoHash(location: CLLocationCoordinate2D(latitude: 0, longitude: 0), precision:22))
+	}
+	
 	func testHashValues() {
 		compare(latitude: 0, longitude: 0, hash: "7zzzzzzzzz")
 		compare(latitude: 0, longitude: -180, hash: "2pbpbpbpbp")
@@ -40,7 +46,7 @@ final class GeoHashTests: XCTestCase {
 											  longitude: longitude)
 		let geoHash = GeoHash(location: location,
 							  precision: precision)
-		XCTAssertEqual(geoHash.geoHashValue, hash)
+		XCTAssertEqual(geoHash?.geoHashValue, hash)
 	}
 	
     static var allTests = [

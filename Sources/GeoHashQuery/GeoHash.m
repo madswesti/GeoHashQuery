@@ -20,15 +20,13 @@
     self = [super init];
     if (self != nil) {
         if (precision < 1) {
-            [NSException raise:NSInvalidArgumentException format:@"Precision must be larger than 0!"];
+			return nil;
         }
         if (precision > GF_MAX_PRECISION) {
-            [NSException raise:NSInvalidArgumentException format:@"Precision must be less than %d!",
-             (GF_MAX_PRECISION+1)];
+			return nil;
         }
         if (!CLLocationCoordinate2DIsValid(location)) {
-            [NSException raise:NSInvalidArgumentException
-                        format:@"Not a valid geo location: [%f,%f]", location.latitude, location.longitude];
+			return nil;
         }
 
         double longitudeRange[] = { -180 , 180 };
@@ -64,7 +62,6 @@
     if ([GeoHash isValidGeoHash:hashValue]) {
         return [self initWithCheckedHash:hashValue];
     } else {
-        [NSException raise:NSInvalidArgumentException format:@"Not a valid geo hash: %@", hashValue];
         return nil;
     }
 }

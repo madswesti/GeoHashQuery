@@ -8,9 +8,9 @@
 
 @property (nonatomic, strong, readonly, nonnull) NSString *geoHashValue;
 
-- (nonnull id)initWithLocation:(CLLocationCoordinate2D)location;
-- (nonnull id)initWithLocation:(CLLocationCoordinate2D)location precision:(NSUInteger)precision;
-- (nonnull id)initWithString:(nonnull NSString *)string;
+- (nullable id)initWithLocation:(CLLocationCoordinate2D)location;
+- (nullable id)initWithLocation:(CLLocationCoordinate2D)location precision:(NSUInteger)precision;
+- (nullable id)initWithString:(nonnull NSString *)string;
 
 + (BOOL)isValidGeoHash:(nonnull NSString *)hash;
 
