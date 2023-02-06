@@ -19,7 +19,7 @@ final class GeoHashTests: XCTestCase {
 		compare(latitude: 90, longitude: 0, hash: "gzzzzzzzzz")
 		compare(latitude: 90, longitude: -180, hash: "bpbpbpbpbp")
 		compare(latitude: 90, longitude: 180, hash: "zzzzzzzzzz")
-
+		
 		compare(latitude: 37.7853074, longitude: -122.4054274, hash: "9q8yywe56g")
 		compare(latitude: 38.98719, longitude: -77.250783, hash: "dqcjf17sy6")
 		compare(latitude: 29.3760648, longitude: 47.9818853, hash: "tj4p5gerfz")
@@ -48,9 +48,4 @@ final class GeoHashTests: XCTestCase {
 							  precision: precision)
 		XCTAssertEqual(geoHash?.geoHashValue, hash)
 	}
-	
-    static var allTests = [
-		("testHashValues", testHashValues),
-		("testCustomprecision", testCustomprecision),
-    ]
 }
