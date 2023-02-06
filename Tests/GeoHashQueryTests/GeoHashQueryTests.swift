@@ -186,16 +186,6 @@ final class GeoHashQueryTests: XCTestCase {
 		}
 	}
 	
-	static var allTests = [
-		("testWrapLongitude", testWrapLongitude),
-		("testMetersToLongitudeDegrees", testMetersToLongitudeDegrees),
-		("testBoundingBoxBits", testBoundingBoxBits),
-		("testInitializers", testInitializers),
-		("testCanJoin", testCanJoin),
-		("testJoinQueries", testJoinQueries),
-		("testPointsInCircleGeoQuery", testPointsInCircleGeoQuery),
-		("testPointsInRegionGeoQueries", testPointsInRegionGeoQueries)
-	]
 }
 
 extension Set where Element == GeoHashQuery {

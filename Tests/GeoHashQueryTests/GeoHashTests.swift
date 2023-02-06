@@ -48,9 +48,4 @@ final class GeoHashTests: XCTestCase {
 							  precision: precision)
 		XCTAssertEqual(geoHash?.geoHashValue, hash)
 	}
-	
-    static var allTests = [
-		("testHashValues", testHashValues),
-		("testCustomprecision", testCustomprecision),
-    ]
 }
