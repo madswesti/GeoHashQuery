@@ -165,7 +165,7 @@ final class GeoHashQueryTests: XCTestCase {
 			}
 		}
 	}
-
+	
 	func testPointsInRegionGeoQueries() {
 		for _ in 0..<1000 {
 			let centerLatitude: CLLocationDegrees = Double.random(in: 0...1) * 160 - 80
@@ -180,7 +180,7 @@ final class GeoHashQueryTests: XCTestCase {
 				let pointLatitude: CLLocationDegrees = max(-89.9, min(89.9, centerLatitude + Double.random(in: 0...1) * latitudeDelta - latitudeDelta/2))
 				let pointLongitude: CLLocationDegrees = GeoHashQuery.wrapLongitude(centerLongitude + (Double.random(in: 0...1) * longitudeDelta - longitudeDelta / 2))
 				let pointLocation = CLLocation(latitude: pointLatitude, longitude: pointLongitude)
-					
+				
 				XCTAssertTrue(queries.contains(location: pointLocation))
 			}
 		}
